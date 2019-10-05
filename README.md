@@ -7,12 +7,15 @@ Adobe Analytics API client (support to both 1.4 and 2.0) for Google App Script (
 3. Access to Adobe IO console to retrieve all configuration options
 
 Links to Adobe API documents:
+
 1.4: https://github.com/AdobeDocs/analytics-1.4-apis
+
 2.0: https://github.com/AdobeDocs/analytics-2.0-apis
+
 
 ## Installation
 1. Go to your Google spreadsheet > Tools > Script editor
-2. On opened app script project, navigate to Resources > Libraries, then in Add a library field, copy and paste in project ID 'MFKxOa7HSAfXZBCca0icJ7FS-o4wWKLZ2'
+2. On opened app script project, navigate to Resources > Libraries, then in Add a library field, copy and paste in project ID `MFKxOa7HSAfXZBCca0icJ7FS-o4wWKLZ2`
 3. Click Add then Save, make sure no error message is shown
 
 ## Example Code
@@ -60,3 +63,8 @@ API client support both 1.4 and 2.0 Adobe API, however, the invoker needs differ
 var result = client.invoke ('1.4', 'DataSources.Get', {'reportSuiteID' : 'my_report_suite_id'});
 Logger.log(result); // Log recieved API response
 ```
+
+
+##TODOs
+1. API 2.0 support is not fully tested, use with cautious
+2. To add JWT token auto-renewal
