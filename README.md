@@ -65,6 +65,9 @@ Logger.log(result); // Log recieved API response
 ```
 
 
-##TODOs
+## TODOs
 1. API 2.0 support is not fully tested, use with cautious
 2. To add JWT token auto-renewal
+
+## License
+MIT
