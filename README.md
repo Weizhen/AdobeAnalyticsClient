@@ -17,13 +17,13 @@ Links to Adobe API documents:
 
 ## Example Code
 
-### Initalization
+### Initialization
 
 API client instance is created by calling:
 
-'''
+```
 var client = AdobeAnalyticsClient.init();
-'''
+```
 
 
 ### Configuration
@@ -31,7 +31,7 @@ var client = AdobeAnalyticsClient.init();
 API client needs configurations from your Adobe IO integration for JWT authentication.
 Read more here: https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/AuthenticationGuide.md
 
-'''
+```
 function Auth () {
   var client = AdobeAnalyticsClient.init()
   .setClientId('') // set client ID
@@ -48,7 +48,7 @@ function Auth () {
    
 }
 
-'''
+```
 
 
 ### Calling Adobe Analytics API
@@ -56,7 +56,7 @@ function Auth () {
 API client support both 1.4 and 2.0 Adobe API, however, the invoker needs different parameters to execute those API calls as 2.0 requires more verbs while 1.4 uses POST
 
 #### 1.4 Example: List all data sources
-'''
+```
 var result = client.invoke ('1.4', 'DataSources.Get', {'reportSuiteID' : 'my_report_suite_id'});
 Logger.log(result); // Log recieved API response
-'''
+```
