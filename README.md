@@ -35,18 +35,22 @@ API client needs configurations from your Adobe IO integration for JWT authentic
 Read more here: https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/AuthenticationGuide.md
 
 ```
-function Auth () {
-  var client = AdobeAnalyticsClient.init()
+function getAdobeAnalyticsClient () {
+  return AdobeAnalyticsClient.init()
   .setClientId('') // set client ID
   .setClientSecret('') // set client secret
-  .setPrviatekey('') // string format private key, generated when Adobe IO integration was created with JWT
+  .setPrviatekey('') // string format private key, replace line breaks with /n, generated when Adobe IO integration was created with JWT
   .setIss('') // set iss
   .setSub('') // set sub
   .setAud('') // set aud
   .setTokenLifeSec(); // set bearer token lifetime in seconds
-  
+}
+
+function callAPI () {
+  var client = getAdobeAnalyticsClient();
   if(client.bearerTokenReady()){ // verify bearer token is received when token is exchanged
     Logger.log("Ready");
+    // Call invoke function
   }
    
 }
@@ -64,6 +68,11 @@ var result = client.invoke ('1.4', 'DataSources.Get', {'reportSuiteID' : 'my_rep
 Logger.log(result); // Log recieved API response
 ```
 
+#### 2.0 Example: Get user me
+```
+var result = client.invoke('2.0','/users/me',{},'company-id',{'method':'GET'});
+Logger.log(result);
+```
 
 ## TODOs
 1. API 2.0 support is not fully tested, use with cautious
